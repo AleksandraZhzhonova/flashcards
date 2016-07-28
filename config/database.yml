@@ -1,23 +1,29 @@
 development:
 
-adapter: postgresql
-host: localhost
-encoding: unicode
-database: cards_development
-pool: 5
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: cards_development
+  pool: 5
+  username: card
+  password: barvac
 
 test:
 
-adapter: postgresql
-host: localhost
-encoding: unicode
-database: cards_development
-pool: 5
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: cards_development
+  pool: 5
+  username: card
+  password: barvac
 
 production:
 
-adapter: postgresql
-host: localhost
-encoding: unicode
-database: cards_development
-pool: 5
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: cards_development
+  pool: 5
+  username: card
+  password: barvac
