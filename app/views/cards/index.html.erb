@@ -1,0 +1,15 @@
+<h1>Все карточки</h1>
+
+<table>
+  <tr>
+    <th>Слово</th>
+    <th>Перевод</th>
+  </tr>
+ 
+  <% @cards.each do |i| %>
+    <tr>
+      <td><%= link_to i.original_text, card_path(i) %></td>
+      <td><%= link_to i.translated_text, card_path(i) %></td>
+    </tr>
+  <% end %>
+</table>
