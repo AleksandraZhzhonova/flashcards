@@ -8,8 +8,8 @@
  
   <% @cards.each do |card| %>
     <tr>
-      <td><%= card.original_text %></td>
-      <td><%= card.translated_text %></td>
+      <td><%= link_to card.original_text, card_path(card) %></td>
+      <td><%= link_to card.translated_text, card_path(card) %></td>
     </tr>
   <% end %>
 </table>
