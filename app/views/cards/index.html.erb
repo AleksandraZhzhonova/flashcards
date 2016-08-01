@@ -6,10 +6,10 @@
     <th>Перевод</th>
   </tr>
  
-  <% @cards.each do |i| %>
+  <% @cards.each do |card| %>
     <tr>
-      <td><%= link_to i.original_text, card_path(i) %></td>
-      <td><%= link_to i.translated_text, card_path(i) %></td>
+      <td><%= card.original_text %></td>
+      <td><%= card.translated_text %></td>
     </tr>
   <% end %>
 </table>
