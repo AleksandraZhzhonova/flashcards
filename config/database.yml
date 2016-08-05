@@ -5,7 +5,7 @@ development:
   encoding: unicode
   database: cards_development
   pool: 5
-  username: card
+  username: alexandra
   password: barvac
 
 test:
@@ -15,7 +15,7 @@ test:
   encoding: unicode
   database: cards_test
   pool: 5
-  username: card
+  username: alexandra
   password: barvac
 
 production:
@@ -25,5 +25,5 @@ production:
   encoding: unicode
   database: cards_development
   pool: 5
-  username: card
+  username: alexandra
   password: barvac
