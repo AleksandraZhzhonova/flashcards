@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :cards
 
-  get 'home/index'
+  get 'home/index' => 'home#index'
+  post 'home/check' => 'home#check'
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

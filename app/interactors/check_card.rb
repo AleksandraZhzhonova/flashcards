@@ -1,8 +1,13 @@
-  class CheckCard
-    include Interactor::Organizer
+class CheckCard
+  include Interactor
 
-    organize 
+  def call
+    card = Card.find(context.params)
+    if card.translated_text == params[:translated_text]
+      context.card = card
+    else
+      context.fail!
+    end 
   end
-     
-
+end
       
