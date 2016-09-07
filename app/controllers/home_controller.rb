@@ -3,12 +3,16 @@ class HomeController < ApplicationController
     @card = Card.need_to_review.first
   end
 
- def check
-    card = Card.find(params[:card_id])
-    if card.translated_text == params[:translated_text]
-    render text: "Верный перевод"
-    else
-    render text: "Неверный перевод " + "нужно перевести так: " + card.translated_text
-    end
+  def check
+    result = CheckСard.call(params: card_params)
+     if result.success?
+       redirect_to home_path, notice: "Правильный перевод"
+     else
+       redirect_to home_path, notice: "Неправильный перевод" 
+     end
+   end
+
+  private def card_params
+     params.require(:card).permit(:card_id, :translated_text)
   end
 end
