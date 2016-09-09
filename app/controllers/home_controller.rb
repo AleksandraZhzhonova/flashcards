@@ -4,15 +4,14 @@ class HomeController < ApplicationController
   end
 
   def check
-    result = CheckСard.call(params: card_params)
+    result = CheckCard.call(params: card_params)
      if result.success?
-       redirect_to home_path, notice: "Правильный перевод"
+       redirect_to root_url, notice: "Правильный перевод"
      else
-       redirect_to home_path, notice: "Неправильный перевод" 
+       redirect_to root_path, notice: "Неправильный перевод, правильно так => #{result.translation}"
      end
    end
-
   private def card_params
-     params.require(:card).permit(:card_id, :translated_text)
+    params.permit(:card_id, :translated_text)
   end
 end
