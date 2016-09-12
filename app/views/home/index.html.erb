@@ -1,0 +1,36 @@
+
+
+<p style="font-size: 22px;">
+Первый в мире удобный менеджер флеш-карточек. Именно так.
+</p>
+
+<% if @card.nil? %>
+  Друг, приходи завтра
+<% else %>
+  <p>
+    <strong>Слово:</strong>
+    <%= @card.original_text %>
+  </p>
+
+  <p>
+    <strong>Дата повторения:</strong>
+    <%= @card.review_date %>
+  </p>
+
+  <%= form_tag("home/check", method: "post") do %>
+  <%= label_tag(:translated_text, "Перевод:") %>
+  <%= text_field_tag(:translated_text) %>
+  <%= hidden_field_tag :card_id, @card.id %>
+  <%= submit_tag("Проверь себя") %>
+  <% end %>
+<% end %>
+
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+
+
+  
+
+
+
