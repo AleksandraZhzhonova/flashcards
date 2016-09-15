@@ -8,7 +8,7 @@ class Card < ActiveRecord::Base
   end
 
   def add_days
-    self.review_date = Date.today + 3.days
+    self.review_date = Time.now + 3.days
   end
   scope :need_to_review, ->{where("review_date <=?", 3.days.ago).where("original_text is not null").order("RANDOM()")}
 end
